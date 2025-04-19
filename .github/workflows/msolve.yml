@@ -1,3 +1,4 @@
+
 name: msolve CI
 
 on:
@@ -55,3 +56,10 @@ jobs:
                     echo "$RUNNER_OS not supported"
                     exit 1
                fi
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            *.tar.gz
+            *.zip
